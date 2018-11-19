@@ -1,0 +1,57 @@
+body { 
+    margin : 0;
+    font-size: 0;
+}
+#board{
+    width:650px;
+    height: 600px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.sky {
+    background-color : skyblue;
+    width: 5%;
+    height: 5%;
+    display: inline-block;
+}
+.white{
+    background-color : white;
+    width: 5%;
+    height: 5%;
+    display: inline-block;
+}
+.green{
+    background-image: url('../img/arbre.png');
+    background-size: cover;
+    width: 5%;
+    height: 5%;
+    display: inline-block;
+}
+.dirt{
+    background-image: url("../img/ssfeuille.jpg");
+    background-size:cover;
+    width: 5%;
+    height: 5%;
+    display: inline-block;
+}
+.pierre{
+    background-image: url("../img/avcfeuille.jpg");
+    background-size:cover;
+    width: 5%;
+    height: 5%;
+    display: inline-block;
+}
+.trunk{
+    background-image: url("../img/trunk.png");
+    background-size:cover;
+    width: 5%;
+    height: 5%;
+    display: inline-block;
+}
+.rock{
+    background-image: url("../img/rock.png");
+    background-size:cover;
+    width: 5%;
+    height: 5%;
+    display: inline-block;
+}

@@ -27,8 +27,20 @@ for (var i = 0; i < boardArr.length; i++){
     for(var j=0; j < boardArr[i].length; j++){
         var pixel =$("<div/>");
         pixel.addClass(boardArr[i][j]);
+        pixel.attr("type", "button");
         board.append(pixel);
 
     }
 }
 });
+var change_pixel = function () {
+    currentPixel = "sky";
+    currentPixelIndicator = $('.currentPixel_indicator');
+    currentPixelIndicator.addClass(currentPixel);
+    };
+
+var curent_pixel = function(){
+    var boxClicked = $(this);
+boxClicked.addClass(ticTacToe.currentPlayer);
+}
+}

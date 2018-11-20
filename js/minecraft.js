@@ -23,6 +23,25 @@ $(document).ready(function () {
             ["dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt"],
         ]
     };
+
+    //Modal
+
+    var modal = $('<div/>');
+    modal.addClass('modal');
+    $("body").prepend(modal);
+
+    var newGameButton = $('<button/>');
+    newGameButton.addClass('newGameButton');
+    newGameButton.addClass('modalButton');
+    $('.modal').prepend(newGameButton);
+    newGameButton.text('New Game');
+
+    var tutorialButton = $('<button/>');
+    tutorialButton.addClass('tutorialButton');
+    tutorialButton.addClass('modalButton');
+    $('.modal').append(tutorialButton);
+    tutorialButton.text('Tutorial');
+
     /**
      * ************************* Create html using js Section ***********************************
      */
@@ -52,14 +71,6 @@ $(document).ready(function () {
             }
         }
     }
-    Minecraft.createBoard();
-    newButton.addEventListenner("click", function (e) {
-        if (Minecraft.selectedMenu !== undefined) {
-            $("#Minecraft.selectedMenu").removeClass("selected");
-        }
-            var clickedMenu = e.target;
-            Minecraft.selectedMenu = clickedMenu.id;
-            clickedMenu.addClass("selected");
-        });
+
 
 });

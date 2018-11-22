@@ -1,6 +1,26 @@
 body { 
     margin : 0;
     font-size: 0;
+    height: 100%;
+    width: 100%;
+}
+.modal{
+    height: 100%;
+    width: 100%;
+    background-image: url('https://compass-ssl.xbox.com/assets/0f/e2/0fe20042-0bb8-4781-82f4-7130f928b021.jpg?n=Minecraft-2017_Superhero-0_Keyart_767x431.jpg');
+    background-size: cover;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+.modalButton{
+    margin: 0 15px;
+    margin-top: 25%;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    
 }
 .board{
     width:660px;

@@ -31,6 +31,7 @@ $(document).ready(function () {
     $("body").append(menu);
     var pickaxe = $("<div/>");
     pickaxe.addClass("pickaxe");
+    pickaxe.click(currentPick);
     menu.append(pickaxe);
     var shovel = $("<div/>");
     shovel.addClass("shovel");
@@ -45,15 +46,30 @@ $(document).ready(function () {
     board.addClass("board");
     $("body").append(board);
 
+
+    var currentPick = function(event){
+        if(event.target.className === "pickaxe"){
+            event.target.className = "pixel rock";
+        }
+    }
+    var thisPixel = function(event){
+        if(event.target.className === "pixel sky"){
+            console.log(event.target.className)
+           event.target.className = "pixel white";
+       }
+    }
+
     //Minecraft.createBoard = function () {
     for (var i = 0; i < Minecraft.boardArr.length; i++) {
         for (var j = 0; j < Minecraft.boardArr[i].length; j++) {
             var pixel = $("<div/>");
             pixel.addClass("pixel")
             pixel.addClass(Minecraft.boardArr[i][j]);
+            pixel.click(thisPixel);
             board.append(pixel);
 
         }
     }
 //}
+
 });

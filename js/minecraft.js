@@ -38,28 +38,25 @@ $(document).ready(function () {
     var axe = $("<div/>");
     axe.addClass("axe");
     menu.append(axe);
+    var empty = $("<div/>");
+    empty.addClass("empty");
+    menu.append(empty);
     var board = $("<div/>");
     board.addClass("board");
     $("body").append(board);
 
-    Minecraft.createBoard = function () {
-        for (var i = 0; i < Minecraft.boardArr.length; i++) {
-            for (var j = 0; j < Minecraft.boardArr[i].length; j++) {
-                var pixel = $("<div/>");
-                pixel.addClass(Minecraft.boardArr[i][j]);
-                board.append(pixel);
+    //Minecraft.createBoard = function () {
+    for (var i = 0; i < Minecraft.boardArr.length; i++) {
+        for (var j = 0; j < Minecraft.boardArr[i].length; j++) {
+            var pixel = $("<div/>");
+            pixel.addClass("pixel")
+            pixel.addClass(Minecraft.boardArr[i][j]);
+            board.append(pixel);
 
-            }
         }
     }
-    Minecraft.createBoard();
-    newButton.addEventListenner("click", function (e) {
-        if (Minecraft.selectedMenu !== undefined) {
-            $("#Minecraft.selectedMenu").removeClass("selected");
-        }
-            var clickedMenu = e.target;
-            Minecraft.selectedMenu = clickedMenu.id;
-            clickedMenu.addClass("selected");
-        });
+    //}
+
 
 });
+

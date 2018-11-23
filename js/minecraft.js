@@ -1,6 +1,6 @@
 $(document).ready(function () {
     /**
-    * ************************* MODAL***********************************
+    * ************************* THE MODAL ***********************************
     */
     var bool = false;
     var modal = $('<div/>');
@@ -68,6 +68,9 @@ $(document).ready(function () {
             };
         });
     });
+     /**
+    * ************************* THE MATRIX ***********************************
+    */
     var Minecraft = {
         boardArr: [
             ["sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky", "sky"],
@@ -104,7 +107,11 @@ $(document).ready(function () {
             };
         };
     };
+ /**
+    * ************************* FUNCTIONS OF THE GAME ***********************************
+    */
 
+   //Switch the tools 
     var pick = "";
     var put = "";
     var currentPick = function (event) {
@@ -120,6 +127,7 @@ $(document).ready(function () {
                 break;
         }
     };
+    // To put back the divs on the board
     var remplaceTools = function (event) {
         if ($(this).hasClass("rock")) {
             put = "pixel rock";
@@ -138,6 +146,7 @@ $(document).ready(function () {
         }
         console.log(put);
     };
+    
     var thisPixel = function (event) {
         if (put === "") {
             if (pick === "pickaxe" && $(this).hasClass("rock")) {
@@ -146,10 +155,6 @@ $(document).ready(function () {
                 $(".empty.rock").click(remplaceTools);
 
             }
-            // else if(pick === "pickaxe" && $(this).hasClass("green")|| $(this).hasClass("pierre")||$(this).hasClass("trunk")||$(this).hasClass("dirt")){
-            //     $(".pickaxe").css("background-color","red")
-            //     setTimeout(function(){$(".pickaxe").css("background-color","black")}, 450);
-            // }
             else if (pick === "shovel" && $(this).hasClass("dirt")) {
                 event.target.className = "pixel sky";
                 $(".empty2").addClass("dirt");
@@ -161,10 +166,6 @@ $(document).ready(function () {
                 $(".empty3").addClass("pierre");
                 $(".empty3.pierre").click(remplaceTools);
             }
-            //else if(pick === "shovel" && $(this).hasClass("green")|| $(this).hasClass("rock")||$(this).hasClass("trunk")){
-            //$(".shovel").css("background-color","red")
-            //setTimeout(function(){$(".shovel").css("background-color","black")}, 450);
-            //}
             else if (pick === "axe" && $(this).hasClass("green")) {
                 event.target.className = "pixel sky";
                 $(".empty4").addClass("green");
@@ -182,35 +183,35 @@ $(document).ready(function () {
                 if (put === "pixel rock") {
                     event.target.className = "pixel rock";
                     put = "";
-                    $(".empty.rock").removeClass();
+                    $(".empty.rock").removeClass("rock");
                 }
                 else if (put === "pixel dirt") {
                     event.target.className = "pixel dirt";
                     put = "";
-                    $(".empty2.dirt").removeClass();
+                    $(".empty2.dirt").removeClass("dirt");
 
                 }
                 else if (put === "pixel pierre") {
                     event.target.className = "pixel pierre";
                     put = "";
-                    $(".empty3.pierre").removeClass();
+                    $(".empty3.pierre").removeClass("pierre");
                 }
                 else if (put === "pixel green") {
                     event.target.className = "pixel green";
                     put = "";
-                    $(".empty4.green").removeClass();
+                    $(".empty4.green").removeClass("green");
                 }
                 else if (put === "pixel trunk") {
                     event.target.className = "pixel trunk";
                     put = "";
-                    $(".empty5.trunk").removeClass();
+                    $(".empty5.trunk").removeClass("trunk");
                 };
             }
         };
     };
 
     /**
-         * ************************* Create html using js Section ***********************************
+         * ************************* CREATE HTML USING JS SECTION ***********************************
          */
     var menu = $("<div/>");
     menu.addClass("menu");
